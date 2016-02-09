@@ -1,0 +1,14 @@
+---
+layout: post
+title: 'Bug Fix : Videofication Template'
+date: '2012-02-19T11:28:00.002-08:00'
+author: Prayag Verma
+tags:
+- Fix
+- Code
+modified_time: '2014-07-06T13:47:11.051-07:00'
+blogger_id: tag:blogger.com,1999:blog-2295610366269213074.post-1331557740478561450
+blogger_orig_url: http://www.stylifyyourblog.com/2012/02/bug-fix-videofication-template.html
+---
+
+<span style="font-size: 15px;">Bloggers using the recently released <a href="http://www.stylifyyourblog.com/2012/02/new-blogger-template-videofication.html">Videofication template</a> were experiencing some problems while adding Pages into the Blog. This post explains how to fix the issue of page styling and page title.<br /></span><br /><a name='more'></a><br /><span style="font-size: x-large;"> To fix the Page Styling Issue</span> <br /><span style="font-size: 15px;"> Add the following just before the &lt;/head&gt; tag</span><br /><br /><pre class="brush: xml" style="font-size: 15px;">&lt;b:if cond=&#39;data:blog.pageType == &amp;quot;static_page&amp;quot;&#39;&gt;<br />&lt;style&gt;.cstyle, .js-kit-rating {display:none !important;}<br />.post-outer {height:100% !important;padding:5px;}&lt;/style&gt;<br />&lt;/b:if&gt;</pre><br /><a href="http://videofication.blogspot.com/p/about.html" target="new" class="button yellow" >Demo</a><br /><br /><span style="font-size: x-large;"> To fix the Page Title Issue</span> <br /><span style="font-size: 15px;"><br />The page title that you would have entered in the Title box in the Post Editor is not visible.<br /><br />In the Edit HTML of the Page add the following Code at the top<br /></span><br /><pre class="brush: xml" style="font-size: 15px;">&lt;h2 style=&quot;font-family: Chelsea Market;&quot; &gt;TITLE&lt;/h2&gt;<br /></pre><span style="font-size: 15px;"><br />Replace TITLE with the respective title of the Page<br /><br /><br />Also Pages don't support videos as the JavaScript is specifically written for posts only. Changing it to accommodate the pages into it will be very time consuming. <br /><br />Alternatively you can add video via the Video option present in the Post Editor.<br /><br />I think this addresses all the issues present, In case you are facing any problems please feel free to share </span>

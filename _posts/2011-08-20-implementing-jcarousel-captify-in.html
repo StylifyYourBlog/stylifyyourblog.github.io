@@ -1,0 +1,284 @@
+---
+layout: post
+title: Implementing jCarousel + Captify in Blogger
+date: '2011-08-20T01:25:00.003-07:00'
+author: Prayag Verma
+tags:
+- Slider
+- Code
+- jQuery
+modified_time: '2014-07-06T13:30:47.797-07:00'
+thumbnail: http://3.bp.blogspot.com/-vjBOZiZ9kLI/Tk1BEbSBgjI/AAAAAAAAA7U/s-3VPQXHKWE/s72-c/aaaa.PNG
+blogger_id: tag:blogger.com,1999:blog-2295610366269213074.post-4120876632576264671
+blogger_orig_url: http://www.stylifyyourblog.com/2011/08/implementing-jcarousel-captify-in.html
+---
+
+<a href="http://www.stylifyyourblog.com/2011/08/implementing-jcarousel-captify-in.html" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="139" src="http://3.bp.blogspot.com/-vjBOZiZ9kLI/Tk1BEbSBgjI/AAAAAAAAA7U/s-3VPQXHKWE/s200/aaaa.PNG" width="200" /></a><a href="http://www.onextrapixel.com/2009/04/28/jquery-jcarousel-lite-with-pretty-image-captions-that-appear-on-rollover/" target="new">This</a> plugin is a combination jQuery jCarousel and jQuery Captify together to create a slick and cool way of showing the thumbnails and captions. Thumbnails can be scrolled with the use of previous and next buttons and when rolling/hovering over any thumbnail, the caption or the title of the thumbnail will slide up.<br /><br /><br /><br /><br /><a name='more'></a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button pink serif skew glossy" data-icon="☯" href="http://www.demo.stylifyyourblog.com/2011/08/jquery-jcarousel-lite-jquery-captify.html" target="_blank">See Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button green serif skew glossy" data-icon="⇓" href="http://www.mediafire.com/file/gn7xp9b1ep0m94g/jCarousel%20+%20Captify.zip" target="_blank">Download</a><br /><br /><br /><br /><b><span class="Apple-style-span" style="font-family: 'Trebuchet MS', sans-serif; font-size: large;">Steps to Add it to Blogger:<br /><br />1.Login to the Blogger account</span><br /></b><br /><div id="tabs"><ul style="font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 15px;"><li><a href="#fragment-1">For Multiple Usage</a></li>
+ <li><a href="#fragment-2">For Single Usage</a></li>
+ </ul><div id="fragment-1"><span class="Apple-style-span" style="font-size: large;"><span class="Apple-style-span" style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px;"><b>2. Now Go to Design &gt; Edit HTML.</b></span><span class="Apple-style-span" style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px;"><br /></span></span><br /><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: center;"><b><span class="Apple-style-span" style="font-size: large; font-weight: normal;"><a href="http://1.bp.blogspot.com/-BjwupP1GDps/TgN56ZZldwI/AAAAAAAAANc/6-60NOlsZ50/s1600/edit+html.PNG" imageanchor="1" style="color: #5499d8; margin-left: 1em; margin-right: 1em; text-decoration: none;"><img border="0" height="261" src="http://1.bp.blogspot.com/-BjwupP1GDps/TgN56ZZldwI/AAAAAAAAANc/6-60NOlsZ50/s320/edit+html.PNG" style="border-bottom-style: none; border-color: initial; border-color: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; border-width: initial; position: relative;" width="320" /></a></span></b></div><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: center;"><b><span class="Apple-style-span" style="font-size: large;"><br /></span></b></div><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: left;"><span class="Apple-style-span" style="font-size: large;"><b>3.Now search for the&nbsp;</b>&lt;/head&gt;<b>&nbsp;tag and paste the following code just&nbsp;<u>Above/Before</u>&nbsp;it.</b></span></div><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: left;"><div style="font-size: 15px;"><b><span class="Apple-style-span" style="color: black; font-family: 'Times New Roman'; font-size: small; font-weight: normal; line-height: normal;"></span></b></div><pre class="brush: xml" style="font-size: 15px;">&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"&gt;&lt;/script&gt; 
+<br />&lt;script type="text/javascript" src="jcarousellite_1.0.1.pack.js"&gt;&lt;/script&gt; 
+<br />&lt;script type="text/javascript" src="captify.tiny.js"&gt;&lt;/script&gt; 
+<br />
+<br />
+<br />&lt;script type="text/javascript"&gt; 
+<br />		$(function() {
+<br />    		$(".slider").jCarouselLite({
+<br />        		btnNext: ".next",
+<br />        		btnPrev: ".prev",
+<br />        		visible: 5,
+<br />                        auto: 900
+<br />    		});
+<br />		});
+<br /> 
+<br />		$(document).ready(function(){
+<br />			$('img.captify').captify({
+<br />				// all of these options are... optional
+<br />				// ---
+<br />				// speed of the mouseover effect
+<br />				speedOver: 'fast',
+<br />				// speed of the mouseout effect
+<br />				speedOut: 'normal',
+<br />				// how long to delay the hiding of the caption after mouseout (ms)
+<br />				hideDelay: 500,	
+<br />				// 'fade', 'slide', 'always-on'
+<br />				animation: 'slide',		
+<br />				// text/html to be placed at the beginning of every caption
+<br />				prefix: '',		
+<br />				// opacity of the caption on mouse over
+<br />				opacity: '0.7',					
+<br />				// the name of the CSS class to apply to the caption box
+<br />				className: 'caption-bottom',	
+<br />				// position of the caption (top or bottom)
+<br />				position: 'bottom',
+<br />				// caption span % of the image
+<br />				spanWidth: '100%'
+<br />			});
+<br />		});
+<br /> 
+<br />	&lt;/script&gt; 
+<br /></pre><div style="font-size: 15px;"><br /></div><b><span class="Apple-style-span" style="font-size: large;">Now Search for ]]&gt;&lt;/b:skin&gt; Using Ctrl+F and paste the following CSS code Above/Before it:</span></b><br /><div style="font-size: 15px;"><br /></div><pre class="brush: xml" style="font-size: 15px;">a:link {
+<br />	color:#0054a6;
+<br />	text-decoration:none; 
+<br />}
+<br />}
+<br />/************************************************
+<br />	      JCAROUSEL LITE		
+<br />************************************************/
+<br />#list {
+<br />	height:130px;
+<br />	width:880px; 
+<br />	margin:30px auto; 
+<br />}
+<br />
+<br />.slider {
+<br />	float:left;
+<br />	left: -5000px; 
+<br />	margin:15px; 
+<br />	position:relative; 
+<br />	visibility:hidden;	
+<br />}
+<br />	
+<br />.slider ul {
+<br />	height:100px;
+<br />	width:600px; 
+<br />}
+<br />
+<br />.slider ul li {
+<br />	padding:0 20px;
+<br />}
+<br />
+<br />.slider ul li img {
+<br />	cursor:pointer;
+<br />	height:100px; 
+<br />	padding-top:3px;
+<br />	width:120px;  
+<br />}
+<br />
+<br />.prev {
+<br />	cursor:pointer; 
+<br />	float:left;
+<br />	padding-top:90px;
+<br />}
+<br />
+<br />.next {
+<br />	cursor:pointer; 
+<br />	float:right; 
+<br />	padding-top:80px;
+<br />padding-right:110px;
+<br />}
+<br />
+<br />/************************************************
+<br />	      CAPTIFY CAPTION		
+<br />************************************************/
+<br />.caption-top, .caption-bottom {
+<br />	background: #000000;
+<br />	color: #ffffff; 
+<br />	cursor:default;
+<br />	padding:2px; 
+<br />	font-size:11px;   
+<br />	text-align:center;
+<br />}
+<br />
+<br />.caption-top {
+<br />	border-width:0px;
+<br />}
+<br />
+<br />.caption-bottom {
+<br />	border-width:0px;
+<br />}
+<br />
+<br />.caption a, .caption a {
+<br />	background:#000;
+<br />	border:none; 
+<br />	text-decoration:none;  
+<br />	padding:2px;
+<br />}
+<br />
+<br />.caption a:hover, .caption a:hover {
+<br />	background:#202020;
+<br />}</pre><div style="font-size: 15px;"><b><br /></b></div><div style="font-size: 15px;"><br /></div></div><br /><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"></div></div></div><div id="fragment-2"><br /><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;">2.Go to the Post/Page you want to add this plugin and then go to Edit HTML tab .</span></b></span></div></div><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="font-family: inherit;"><br /></span></div></div><div style="color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;"><br /></span></b></span></div></div></div></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: center;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><a href="http://1.bp.blogspot.com/-ggkAkaAUDUo/TclcgtJizaI/AAAAAAAAAEA/dcX6oMroVQw/s1600/d.PNG" imageanchor="1" style="color: #336699; margin-left: 1em; margin-right: 1em; text-decoration: none;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;"><img border="0" height="240" src="http://1.bp.blogspot.com/-ggkAkaAUDUo/TclcgtJizaI/AAAAAAAAAEA/dcX6oMroVQw/s400/d.PNG" style="border-bottom-style: none; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; cursor: move; position: relative;" width="400" /></span></b></a></span></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: left;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;"><br /></span></b></span></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: left;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;">3.Now copy the code from below and paste it there.</span></b></span></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: left;"><span class="Apple-style-span" style="font-size: large;"><b><br /></b></span></div><br /><pre class="brush: xml">&lt;style&gt;
+<br />a:link {
+<br />	color:#0054a6;
+<br />	text-decoration:none; 
+<br />}
+<br />}
+<br />/************************************************
+<br />	      JCAROUSEL LITE		
+<br />************************************************/
+<br />#list {
+<br />	height:130px;
+<br />	width:880px; 
+<br />	margin:30px auto; 
+<br />}
+<br />
+<br />.slider {
+<br />	float:left;
+<br />	left: -5000px; 
+<br />	margin:15px; 
+<br />	position:relative; 
+<br />	visibility:hidden;	
+<br />}
+<br />	
+<br />.slider ul {
+<br />	height:100px;
+<br />	width:600px; 
+<br />}
+<br />
+<br />.slider ul li {
+<br />	padding:0 20px;
+<br />}
+<br />
+<br />.slider ul li img {
+<br />	cursor:pointer;
+<br />	height:100px; 
+<br />	padding-top:3px;
+<br />	width:120px;  
+<br />}
+<br />
+<br />.prev {
+<br />	cursor:pointer; 
+<br />	float:left;
+<br />	padding-top:90px;
+<br />}
+<br />
+<br />.next {
+<br />	cursor:pointer; 
+<br />	float:right; 
+<br />	padding-top:80px;
+<br />padding-right:110px;
+<br />}
+<br />
+<br />/************************************************
+<br />	      CAPTIFY CAPTION		
+<br />************************************************/
+<br />.caption-top, .caption-bottom {
+<br />	background: #000000;
+<br />	color: #ffffff; 
+<br />	cursor:default;
+<br />	padding:2px; 
+<br />	font-size:11px;   
+<br />	text-align:center;
+<br />}
+<br />
+<br />.caption-top {
+<br />	border-width:0px;
+<br />}
+<br />
+<br />.caption-bottom {
+<br />	border-width:0px;
+<br />}
+<br />
+<br />.caption a, .caption a {
+<br />	background:#000;
+<br />	border:none; 
+<br />	text-decoration:none;  
+<br />	padding:2px;
+<br />}
+<br />
+<br />.caption a:hover, .caption a:hover {
+<br />	background:#202020;
+<br />}
+<br />&lt;/style&gt;
+<br />
+<br />&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"&gt;&lt;/script&gt; 
+<br />&lt;script type="text/javascript" src="jcarousellite_1.0.1.pack.js"&gt;&lt;/script&gt; 
+<br />&lt;script type="text/javascript" src="captify.tiny.js"&gt;&lt;/script&gt; 
+<br />&lt;script type="text/javascript"&gt; 
+<br />		$(function() {
+<br />    		$(".slider").jCarouselLite({
+<br />        		btnNext: ".next",
+<br />        		btnPrev: ".prev",
+<br />        		visible: 5,
+<br />                        auto: 900
+<br />    		});
+<br />		});
+<br /> 
+<br />		$(document).ready(function(){
+<br />			$('img.captify').captify({
+<br />				// all of these options are... optional
+<br />				// ---
+<br />				// speed of the mouseover effect
+<br />				speedOver: 'fast',
+<br />				// speed of the mouseout effect
+<br />				speedOut: 'normal',
+<br />				// how long to delay the hiding of the caption after mouseout (ms)
+<br />				hideDelay: 500,	
+<br />				// 'fade', 'slide', 'always-on'
+<br />				animation: 'slide',		
+<br />				// text/html to be placed at the beginning of every caption
+<br />				prefix: '',		
+<br />				// opacity of the caption on mouse over
+<br />				opacity: '0.7',					
+<br />				// the name of the CSS class to apply to the caption box
+<br />				className: 'caption-bottom',	
+<br />				// position of the caption (top or bottom)
+<br />				position: 'bottom',
+<br />				// caption span % of the image
+<br />				spanWidth: '100%'
+<br />			});
+<br />		});
+<br /> 
+<br />	&lt;/script&gt; 
+<br />
+<br /></pre><b><br /></b></div></div><br /><span class="Apple-style-span" style="font-family: Verdana, Geneva, sans-serif;"><span class="Apple-style-span" style="font-family: Verdana, Geneva, sans-serif;"><span class="Apple-style-span" style="color: #333333; font-family: Verdana, Geneva, sans-serif; line-height: 20px;"><span class="Apple-style-span" style="line-height: 20px;"><span class="Apple-style-span" style="font-family: inherit; font-size: large; font-weight: normal;"><span class="Apple-style-span" style="color: #333333; font-family: inherit; font-weight: bold; line-height: 20px;"><b>4.Now for&nbsp;adding&nbsp;the&nbsp;images&nbsp;into this plugin see the following markup:</b></span></span><br /><span class="Apple-style-span" style="color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 15px; line-height: 20px;"><span class="Apple-style-span" style="color: #333333; font-family: inherit; font-size: 15px; font-weight: normal; line-height: 20px;"><br /><span class="Apple-style-span" style="font-weight: 800;"></span></span><br /><span class="Apple-style-span" style="font-weight: 800;"><br /></span></span></span></span></span></span><br /><br /><pre class="brush: xml">&lt;div id="list"&gt;
+<br />			&lt;div class="prev"&gt;
+<br />&lt;img src="http://4.bp.blogspot.com/-iC6vK_Hu22I/Tk08g-4HY4I/AAAAAAAAA7Q/RlpZ8q8HLZ0/s1600/prev.jpg" alt="prev" /&gt;&lt;/div&gt;
+<br />
+<br />&lt;div class="slider"&gt;
+<br />					&lt;ul&gt;
+<br />&lt;li&gt; 
+<br />&lt;a href="#" title="Title 1"&gt;&lt;img src="1.jpg" alt="Title 1" class="captify" /&gt;&lt;/a&gt; 
+<br />&lt;/li&gt;
+<br />&lt;li&gt; 
+<br />&lt;a href="#" title="Title 2"&gt;&lt;img src="2.jpg" alt="Title 2" class="captify" /&gt;&lt;/a&gt; 
+<br />&lt;/li&gt;
+<br />&lt;li&gt; 
+<br />&lt;a href="#" title="Title 3"&gt;&lt;img src="3.jpg" alt="Title 3" class="captify" /&gt;&lt;/a&gt; 
+<br />&lt;/li&gt;
+<br />&lt;/ul&gt;
+<br />&lt;/div&gt;
+<br />&lt;div class="next"&gt;
+<br />&lt;img src="http://1.bp.blogspot.com/-6ea7NXE4uVE/Tk08gdF2ouI/AAAAAAAAA7M/vmrAN0vqQjo/s1600/next.jpg" alt="next" /&gt;&lt;/div&gt;
+<br />&lt;/div&gt;
+<br />&lt;/div&gt;
+<br /></pre><br /><br /><b>Here </b>Title<b> tag will contain the text which will appear when the thumbnail is rolled/hovered upon.<br />Another Important thing to note is that the&nbsp;positioning&nbsp;of the Next and Previous Arrows can be out of place , to rectify this just manually change the placement of the arrows using the </b>.next<b> and </b>.prev<b> attributes present in the CSS Code. </b><br /><b><br /></b><br /><b><br /></b><br /><b><span class="Apple-style-span" style="font-size: large;">5.Now save the Post/Page.<br /><br /><br />Note: Please Host all the files on free hosting service like <a href="http://www.stylifyyourblog.com/2011/08/hosting-your-files-on-dropbox.html">DropBox</a> or <a href="http://www.stylifyyourblog.com/2011/07/letting-go-of-your-hosting-woes.html">Blogspot</a> itself!</span><br /></b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button pink serif skew glossy" data-icon="☯" href="http://www.demo.stylifyyourblog.com/2011/08/jquery-jcarousel-lite-jquery-captify.html" target="_blank">See Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button green serif skew glossy" data-icon="⇓" href="http://www.mediafire.com/file/gn7xp9b1ep0m94g/jCarousel%20+%20Captify.zip" target="_blank">Download</a><br /><br /><br />

@@ -1,0 +1,123 @@
+---
+layout: post
+title: Creating a Chrome Extension for your Blog
+date: '2011-08-08T12:04:00.002-07:00'
+author: Prayag Verma
+tags:
+- Code
+- Tips
+modified_time: '2014-07-06T13:31:29.476-07:00'
+thumbnail: http://4.bp.blogspot.com/-resiQb8hSuM/Tj7BEI5HtZI/AAAAAAAAA5Y/_WkrFhBtClo/s72-c/Google-Chrome-App-Store.jpg
+blogger_id: tag:blogger.com,1999:blog-2295610366269213074.post-7959860859632880197
+blogger_orig_url: http://www.stylifyyourblog.com/2011/08/creating-chrome-extension-for-your-blog.html
+---
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://www.stylifyyourblog.com/2011/08/creating-chrome-extension-for-your-blog.html" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="142" src="http://4.bp.blogspot.com/-resiQb8hSuM/Tj7BEI5HtZI/AAAAAAAAA5Y/_WkrFhBtClo/s200/Google-Chrome-App-Store.jpg" width="200" /></a></div><div style="text-align: left;">In this Post we will be creating a simple Chrome Extension which will give your readers a way to be updated with your Blogs content without actually visiting it. This Extensions will put a small Icon near the Chrome Address bar in your readers&nbsp;browser&nbsp;,which when clicked will Display the Latest Post on your Blog in a small Popup window. I will be explaining three different versions of this Extension with some minor differences. Firstly check out <a href="https://chrome.google.com/webstore/detail/fiimpakohnmpdkachnpmjdoakjifobcb" target="new">StylifyYourBlog's Extension</a>&nbsp;to know how it looks<br /><br /><a name='more'></a><br /><br /><br /><b>Now lets get Started&nbsp;</b><br /><br />Firstly you will Need some basic things for building this extension, you can Download them here:<br /><br /></div><div class="separator" style="clear: both; text-align: center;"><a href="http://www.mediafire.com/?b5w1yosxzadbjl6" style="margin-left: 1em; margin-right: 1em;" target="_blank"><img height="63" src="http://2.bp.blogspot.com/-J5HGv8EGyZk/TenlvWbs1RI/AAAAAAAAAI8/LT4D7IVtSh0/s1600/download_button_zip.jpg" width="227" /></a></div><br />This Package contains Three different Extensions (Same thing just little changes)<br /><br />Extension 1: Simple ,just shows the Posts<br />Extension 2: Shows the Posts and also slides after define time interval ,bringing into view older posts <br />Extension 3:Same as First one but when any post is clicked then opens the mobile version<br /><br />In this package some things are common ,I will be giving a short markup about every item present:<br /><span class="Apple-style-span" style="background-color: #f1c232;">Icon_19.png</span>&nbsp;&nbsp; has&nbsp;dimension&nbsp;19 by 19 and is going to appear in the Address bar<br /><span class="Apple-style-span" style="background-color: #f1c232;">Icon_128.png</span>&nbsp;&nbsp; has dimensions 128 by 128 and is going to appear in the main Chrome Extensions Tab<br /><span class="Apple-style-span" style="background-color: #f1c232;">jquery.min.js</span>&nbsp;&nbsp; is the jQuery library (this you can either include in the Extension or call it through a CDN)<br /><span class="Apple-style-span" style="background-color: #f1c232;">jquery.vticker.js</span>&nbsp;&nbsp; is used for dynamically changing the Feed<br /><span class="Apple-style-span" style="background-color: #f1c232;">jquery.zrssfeed.min.js</span>&nbsp;&nbsp; is the plugin which fetches the feed from the Your Blog<br /><span class="Apple-style-span" style="background-color: #f1c232;">manifest.json</span>&nbsp;&nbsp; is the Main file for the Extension<br /><span class="Apple-style-span" style="background-color: #f1c232;">style.css</span>&nbsp;&nbsp; is the CSS file for styling the Extension<br /><span class="Apple-style-span" style="background-color: #f1c232;">StylifyYourBlog.html</span>&nbsp;&nbsp; is the HTML file which will contain the main code of the popup window<br /><br />Now I will explain the coding in detail:<br /><br /><br /><span class="Apple-style-span" style="font-size: large;"><b>1.Manifest.json</b></span><br /><br />In this file we are specifying the Name of the extension and a Number of other options, such as browser actions ,permissions,icons etc.<br /><br />In browser_actions, we put settings that are in relation with the browser window. The popup property tells Chrome, that we are going to show .html as a popup. There are a number of settings you can put in browser_actions. You can read more on Google Chrome’s Extension documentation.<br /><br /><pre class="brush: xml">{
+<br />	"name": "Stylify Your Blog Extension",
+<br />	"version": "1.0",
+<br />	"description": "Stay Updated with the latest post from Stylify Your Blog",
+<br />	"icons":{
+<br />		"128":"icon_128.png"
+<br />	},
+<br />	
+<br />	"browser_action":	{
+<br />		"default_icon": "icon_19.png",
+<br />		"popup": "StylifyYourBlog.html"
+<br />	}
+<br />
+<br />}</pre><br />Now I will be explaining Three Different Versions of this Extension:<br />The Only Difference is in their HTML versions rest all coding is same (just minor changes in jquery.zrssfeed.js file)<br /><br /><br /><div id="tabs"><ul><li><a href="#fragment-1"><b>1st & 3rd :The Basic  & Experimental Version</b></a></li>
+ <li><a href="#fragment-2"><b>2nd Version :The Stylified Version</b></a></li>
+ </ul><div id="fragment-1"><br /><br /><b>The HTML file ( a.k.a StylifyYourBlog file in the Package )</b><br /><b><br /></b><br /><pre class="brush: xml">&lt;!DOCTYPE html&gt;
+<br />&lt;html&gt;
+<br />&lt;head&gt;
+<br />&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot; /&gt;
+<br />&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js&quot;&gt;
+<br />&lt;/script&gt;
+<br />&lt;script src=&quot;jquery.zrssfeed.min.js&quot;&gt;&lt;/script&gt;
+<br />&lt;/head&gt;
+<br />
+<br />&lt;body&gt;
+<br />
+<br />&lt;h1&gt;Latest Posts on Stylify Your Blog&lt;/h1&gt;
+<br />&lt;script type=&quot;text/javascript&quot;&gt;
+<br />$(document).ready(function () {
+<br />  $(&#39;#content&#39;).rssfeed(&#39;http://stylifyyourblog.blogspot.com/rss.xml&#39;, {
+<br />    limit: 3
+<br />  });
+<br />});
+<br />&lt;/script&gt;
+<br />&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+<br />
+<br />&lt;/body&gt;
+<br />&lt;/html&gt;
+<br /></pre>Version 1 is simple version which only shows the most recent Posts in a Popup window.<br /><br />Version 3 is quite similar to Version 1 but the only difference being that when the Post is clicked it opens the Mobile Version of that post on the Popup Window itself<br /><br /></div><div id="fragment-2"><br /><br /><b>The HTML file ( a.k.a StylifyYourBlog file in the Package )</b><br /><b><br /></b><br /><pre class="brush: xml">&lt;!DOCTYPE html&gt;
+<br />&lt;html&gt;
+<br />&lt;head&gt;
+<br />&lt;link rel="stylesheet" type="text/css" href="style.css" /&gt;
+<br />&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"&gt;
+<br />&lt;/script&gt;
+<br />&lt;script src="jquery.zrssfeed.min.js"&gt;&lt;/script&gt;
+<br />&lt;script src="jquery.vticker.js" type="text/javascript"&gt;&lt;/script&gt;&lt;/head&gt;
+<br />
+<br />&lt;body&gt;
+<br />
+<br />&lt;h1&gt;Latest Posts on Stylify Your Blog&lt;/h1&gt;
+<br />&lt;script type="text/javascript"&gt;$(document).ready(function () {	$('#content').rssfeed('http://YourBlogName.blogspot.com/rss.xml',{}, function(e) {		$(e).find('div.rssBody').vTicker();	});});&lt;/script&gt;
+<br />&lt;div id="content"&gt;&lt;/div&gt;
+<br />
+<br />&lt;/body&gt;
+<br />&lt;/html&gt;
+<br /></pre><br />This is a little pepped up version which provides a Latest post with sliding ticker.<br /></div></div><br /><br /><b>The CSS file ( a.k.a style file in the package )</b><br /><pre class="brush: xml;highlight: [12,34];">*{
+<br />    margin:0;
+<br />    padding:0;
+<br />}
+<br />
+<br />body{
+<br />    /* Setting default text color, background and a font stack */
+<br />    font-size:12px;
+<br />    color:#666;
+<br />    
+<br />    /* A webkit gradient: */
+<br />    background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEE), to(#DDD));
+<br />    
+<br />    text-shadow:1px 1px 0 white;
+<br />    font-family:Arial, Helvetica, sans-serif;
+<br />    overflow-x:hidden;
+<br />    width:500px;
+<br />    padding:10px 20px;
+<br />    margin-bottom:10px;
+<br />}
+<br />
+<br />
+<br />a,a:visited{
+<br />    color:#09F;
+<br />    text-decoration:none;
+<br />}
+<br />
+<br />a:hover{
+<br />    text-decoration:underline;
+<br />}
+<br />
+<br />h1{
+<br />    /* Webkit gradient: */
+<br />    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEE), to(#DDD));
+<br />    
+<br />    border-bottom: 1px solid #F0F0F0;
+<br />    font-size: 24px;
+<br />    font-weight: normal;
+<br />    margin-bottom: 30px;
+<br />    padding: 30px 0px;
+<br />    text-align: center;
+<br />    text-shadow: white 0px 1px 1px;
+<br />}
+<br />
+<br />h2{
+<br />    font-size:24px;
+<br />    font-weight:normal;
+<br />    right:40px;
+<br />    padding-left:120px;
+<br />}
+<br />
+<br />h1,h2{
+<br />    font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+<br />}</pre>To change the background Visit <a target="new" href="http://ie.microsoft.com/testdrive/Graphics/CSSGradientBackgroundMaker/Default.html">Here</a> and after deciding the color copy the code labelled for (Chrome 11+) and paste it in line 12 and 34 .(Make sure you remove <i>-image</i> from the code you copied )<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Zrssfeed</span></b><br />This plugin will read RSS feeds from any Website URL using the Google Feeds API. It produces structured HTML with in-built CSS classes for styling.<br /><br /><b>In Version1</b>:I have changed it a little to work in the desired way (Added &nbsp;<i>target="new"&nbsp;</i>&nbsp;in all the &lt;a&gt; tags so that when any Item is clicked in the Popup window ,it opens a New Tab rather than in that Popup window itself!).<br /><br /><b>In Version 2</b>: Same as Version 1 [Note: To change the time interval between Sliding Post ,just open jquery.vticker.js file and change the value of pause variable to x000 ,where x is the number of seconds (Do not remove the Zeros )]<br /><br /><b>In Version 3</b>: Added &nbsp;'?m=1' tag in the second link tag so that it loads the mobile version of the your Blogs Post in the Small Popup window itself. There is one plus point in it that the Mobile version is Auto&nbsp;Dimensioning&nbsp;so no content will appear out of place in the popup window.<br /><br /><b>Note:</b>If the mobile version of your blog doesn't work then go to <b>Setting > Email & Mobile</b> and tick the Mobile templates as yes<br /><br /><b><span class="Apple-style-span" style="font-size: large;">Generating your .Crx (extension)</span></b><br />Firstly Put all your files in a folder.<br />Then in Chrome open chrome://extensions/ and then Click on&nbsp;Developer mode &gt; Load unpacked extension.<br />After you make a change to the extension, just hit the Reload link below it.<br /><br />After you’re done developing, click Pack extension and a crx file will be created for you. You can serve this file from your site and enable your site’s visitors to install it. I suggest you host it on Google Sites or best on Chrome Web Store (but then you will have to pay one time fee of 5$ )

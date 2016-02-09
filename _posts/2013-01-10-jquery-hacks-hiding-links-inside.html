@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'jQuery Hacks : Hiding Links inside Comments'
+date: '2013-01-10T23:19:00.001-08:00'
+author: Prayag Verma
+tags:
+- Code
+- jQuery
+- Tips
+modified_time: '2014-07-06T14:08:42.418-07:00'
+thumbnail: http://3.bp.blogspot.com/-WeScyEbutnU/UO-9lkQLmLI/AAAAAAAAH8M/CR3G8CMPq8Y/s72-c/stop-spam.jpg
+blogger_id: tag:blogger.com,1999:blog-2295610366269213074.post-8117204164475136542
+blogger_orig_url: http://www.stylifyyourblog.com/2013/01/jquery-hacks-hiding-links-inside.html
+---
+
+<div style="text-align: left;"></div><a href="http://www.stylifyyourblog.com/2013/01/jquery-hacks-hiding-links-inside.html"   style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img alt="span stop"  height="180" src="http://3.bp.blogspot.com/-WeScyEbutnU/UO-9lkQLmLI/AAAAAAAAH8M/CR3G8CMPq8Y/s200/stop-spam.jpg" class="thumb" title="Spam image" width="177" /></a>For the past few months I have been dealing with a lot of spam in the comment section. The Blogger's inbuilt filter has stopped more than 6000 spam comments but still some slipped by . Due to this very reason I had to close the Anonymous option for commenting. But this didn't solve the problem and people with Blogger profile started to spam as well . So I have come up with a simple jQuery powered hack that hides any clickable link and just displays its text.<br /><a name='more'></a><br /><br /><b class="headings imports">Demo</b><br />Try adding links in the comment below <img src="http://l.yimg.com/us.yimg.com/i/mesg/emoticons7/3.gif" /><br /><br /><b class="headings imports">Code</b><br /><pre class="brush: xml;collapse:true">&lt;script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'/&gt;<br />&lt;script&gt;  <br /><br />$('.comment-content a[rel$=nofollow]').replaceWith(function(){return ($(this).text());});<br /><br />&lt;/script&gt;</pre><br />Add it just before the <b><i>&lt;/body&gt;</i></b> tag in the <b>Edit HTML</b>&nbsp;. In case you have already included the jQuery library , then add the code starting from Line 2 onwards.<br /><br />If you want to completely remove the links from the comments , then use this code instead<br /><br /><pre class="brush: xml;collapse:true">&lt;script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'/&gt;<br />&lt;script&gt;  <br /><br />$('.comment-content a[rel$=nofollow]').hide());<br /><br />&lt;/script&gt;</pre><br /><br />This works for the Threaded Comments in Blogger , incase you want to make it work for the old Comments in Blogger , then the code is as follows<br /><pre class="brush: xml;collapse:true">&lt;script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'/&gt;<br />&lt;script&gt;  <br /><br />$('.comment-body p a[rel$=nofollow]').replaceWith(function(){return ($(this).text());});<br /><br />&lt;/script&gt;</pre><br /><br />Hope this helps you in curbing the spam in your comment section and feel free to share this simple trick with your friends<script>//<![CDATA[ window.onload = function() {var ba=document.getElementsByClassName("comment-content");len=ba.length; for(var co=0;co<len;co++){var ha=ba[co].getElementsByTagName("a");   lens=ha.length;if(lens == 0)continue; for(var cos=0;cos<lens;cos++)    {     var gd =ha[cos].innerHTML;var te = ha[cos].insertAdjacentHTML( 'afterend', gd );ha[cos].remove();    }  } }; //]]></script>

@@ -1,0 +1,96 @@
+---
+layout: post
+title: Implementing Smooth Div Scroll in Blogger
+date: '2011-08-27T10:43:00.004-07:00'
+author: Prayag Verma
+tags:
+- Slider
+- Code
+- jQuery
+modified_time: '2014-07-06T13:30:47.739-07:00'
+thumbnail: http://2.bp.blogspot.com/-xFl7MEjkmhc/TlJtTrvzw4I/AAAAAAAABAI/w3sJnu9OrqI/s72-c/Smooth-Div-Scroll.jpg
+blogger_id: tag:blogger.com,1999:blog-2295610366269213074.post-1591117060574528582
+blogger_orig_url: http://www.stylifyyourblog.com/2011/08/implementing-smooth-div-scroll-in.html
+---
+
+<div class="separator" style="clear: both; text-align: center;"><a href="http://www.stylifyyourblog.com/2011/08/implementing-smooth-div-scroll-in.html" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="148" src="http://2.bp.blogspot.com/-xFl7MEjkmhc/TlJtTrvzw4I/AAAAAAAABAI/w3sJnu9OrqI/s320/Smooth-Div-Scroll.jpg" width="320" /></a></div><a href="http://www.smoothdivscroll.com/" target="_blank">Smooth Div Scroll</a> is a jQuery plugin that scrolls content horizontally. Apart from many of the other scrolling plugins that have been written for jQuery, Smooth Div Scroll does not limit the scroling to distinct steps. As the name of the plugin hints, scrolling is smooth. There are no visible buttons or links since the scrolling is done using hotspots within the scrollable area or via autoscrolling.<br /><a name='more'></a><br /><br /><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button pink serif skew glossy" data-icon="☯" href="http://www.demo.stylifyyourblog.com/2011/08/smooth-div-scroll.html" target="_blank">See Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button green serif skew glossy" data-icon="⇓" href="http://www.mediafire.com/file/t3vwjowlvcxbzb0/SmoothDivScroll-1.1.zip" target="_blank">Download</a><br /><br /><br /><br /><br /><b><span class="Apple-style-span" style="font-family: 'Trebuchet MS', sans-serif; font-size: large;">Steps to Add it to Blogger:<br /><br />1.Login to the Blogger account</span><br /></b><br /><div id="tabs"><ul style="font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 15px;"><li><a href="#fragment-1">For Multiple Usage</a></li>
+ <li><a href="#fragment-2">For Single Usage</a></li>
+ </ul><div id="fragment-1"><span class="Apple-style-span" style="font-size: large;"><span class="Apple-style-span" style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px;"><b>2. Now Go to Design &gt; Edit HTML.</b></span><span class="Apple-style-span" style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px;"><br /></span></span><br /><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: center;"><b><span class="Apple-style-span" style="font-size: large; font-weight: normal;"><a href="http://1.bp.blogspot.com/-BjwupP1GDps/TgN56ZZldwI/AAAAAAAAANc/6-60NOlsZ50/s1600/edit+html.PNG" imageanchor="1" style="color: #5499d8; margin-left: 1em; margin-right: 1em; text-decoration: none;"><img border="0" height="261" src="http://1.bp.blogspot.com/-BjwupP1GDps/TgN56ZZldwI/AAAAAAAAANc/6-60NOlsZ50/s320/edit+html.PNG" style="border-bottom-style: none; border-color: initial; border-color: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; border-width: initial; position: relative;" width="320" /></a></span></b></div><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: center;"><b><span class="Apple-style-span" style="font-size: large;"><br /></span></b></div><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: left;"><span class="Apple-style-span" style="font-size: large;"><b>3.Now search for the&nbsp;</b>&lt;/head&gt;<b>&nbsp;tag and paste the following code just&nbsp;<u>Above/Before</u>&nbsp;it. (<a href="http://www.stylifyyourblog.com/p/faq.html" target="_Blank" >How to copy code easily</a>)</b></span></div><div style="color: #222222; font-family: Verdana, Arial, sans-serif; line-height: 21px; text-align: left;"><div style="font-size: 15px;"><b><span class="Apple-style-span" style="color: black; font-family: 'Times New Roman'; font-size: small; font-weight: normal; line-height: normal;"></span></b></div><br /><pre class="brush: xml" style="font-size: 15px;">&lt;link rel="Stylesheet" type="text/css" href="smoothDivScroll.css" /&gt; 
+<br />&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt; 
+<br />&lt;script src="jquery.ui.widget.js" type="text/javascript"&gt;&lt;/script&gt;  
+<br />&lt;script src="jquery.smoothDivScroll-1.1-min.js" type="text/javascript"&gt;&lt;/script&gt; 
+<br />
+<br />&lt;script type="text/javascript"&gt; 
+<br />		$(window).load(function() {
+<br />			$("div#makeMeScrollable").smoothDivScroll({ autoScroll: "onstart", 
+<br />														autoScrollDirection: "backandforth",
+<br />														autoScrollStep: 1,
+<br />														autoScrollInterval: 15,
+<br />														startAtElementId: "startAtMe",
+<br />														visibleHotSpots: "always" });
+<br /> 
+<br />		});
+<br />	&lt;/script&gt; 
+<br />&lt;style type="text/css"&gt; 
+<br />	
+<br />	#makeMeScrollable
+<br />	{
+<br />		width:100%;
+<br />		height: 330px;
+<br />		position: relative;
+<br />	}
+<br />	
+<br />	#makeMeScrollable div.scrollableArea *
+<br />	{
+<br />		position: relative;
+<br />		float: left;
+<br />		margin: 0;
+<br />		padding: 0;
+<br />	}
+<br />	
+<br />	&lt;/style&gt; </pre><br />Note: Please Host all the files on free hosting service like <a href="http://www.stylifyyourblog.com/2011/08/hosting-your-files-on-dropbox.html">DropBox</a> or <a href="http://www.stylifyyourblog.com/2011/07/letting-go-of-your-hosting-woes.html">Blogspot</a> itself!</span><br /><div style="font-size: 15px;"><b><br /></b></div><div style="font-size: 15px;"><br /></div></div><br /><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"></div></div></div><div id="fragment-2"><br /><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;">2.Go to the Post/Page you want to add this plugin and then go to Edit HTML tab .</span></b></span></div></div><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="font-family: inherit;"><br /></span></div></div><div style="color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><div style="margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;"><br /></span></b></span></div></div></div></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: center;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><a href="http://1.bp.blogspot.com/-ggkAkaAUDUo/TclcgtJizaI/AAAAAAAAAEA/dcX6oMroVQw/s1600/d.PNG" imageanchor="1" style="color: #336699; margin-left: 1em; margin-right: 1em; text-decoration: none;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;"><img border="0" height="240" src="http://1.bp.blogspot.com/-ggkAkaAUDUo/TclcgtJizaI/AAAAAAAAAEA/dcX6oMroVQw/s400/d.PNG" style="border-bottom-style: none; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-color: initial; border-left-style: none; border-right-style: none; border-top-style: none; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; border-width: initial; cursor: move; position: relative;" width="400" /></span></b></a></span></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: left;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;"><br /></span></b></span></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: left;"><span class="Apple-style-span" style="color: #333333; line-height: 20px;"><b><span class="Apple-style-span" style="font-family: inherit; font-size: large;">3.Now copy the code from below and paste it there. (<a href="http://www.stylifyyourblog.com/p/faq.html" target="_Blank" >How to copy code easily</a>) </span></b></span></div><div class="separator" style="clear: both; color: #333333; line-height: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; text-align: left;"><span class="Apple-style-span" style="font-size: large;"><b><br /></b></span></div><pre class="brush: xml">&lt;link rel="Stylesheet" type="text/css" href="smoothDivScroll.css" /&gt; 
+<br />&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt; 
+<br />&lt;script src="jquery.ui.widget.js" type="text/javascript"&gt;&lt;/script&gt;  
+<br />&lt;script src="jquery.smoothDivScroll-1.1-min.js" type="text/javascript"&gt;&lt;/script&gt; 
+<br />
+<br />&lt;script type="text/javascript"&gt; 
+<br />		$(window).load(function() {
+<br />			$("div#makeMeScrollable").smoothDivScroll({ autoScroll: "onstart", 
+<br />														autoScrollDirection: "backandforth",
+<br />														autoScrollStep: 1,
+<br />														autoScrollInterval: 15,
+<br />														startAtElementId: "startAtMe",
+<br />														visibleHotSpots: "always" });
+<br /> 
+<br />		});
+<br />	&lt;/script&gt; 
+<br />&lt;style type="text/css"&gt; 
+<br />	
+<br />	#makeMeScrollable
+<br />	{
+<br />		width:100%;
+<br />		height: 330px;
+<br />		position: relative;
+<br />	}
+<br />	
+<br />	#makeMeScrollable div.scrollableArea *
+<br />	{
+<br />		position: relative;
+<br />		float: left;
+<br />		margin: 0;
+<br />		padding: 0;
+<br />	}
+<br />	
+<br />	&lt;/style&gt; 
+<br /></pre><br />Note: Please Host all the files on free hosting service like <a href="http://www.stylifyyourblog.com/2011/08/hosting-your-files-on-dropbox.html">DropBox</a> or <a href="http://www.stylifyyourblog.com/2011/07/letting-go-of-your-hosting-woes.html">Blogspot</a> itself!</span><br /><b><br /></b></div></div><br /><span class="Apple-style-span" style="font-family: Verdana, Geneva, sans-serif;"><span class="Apple-style-span" style="font-family: Verdana, Geneva, sans-serif;"><span class="Apple-style-span" style="color: #333333; font-family: Verdana, Geneva, sans-serif; line-height: 20px;"><span class="Apple-style-span" style="line-height: 20px;"><span class="Apple-style-span" style="font-family: inherit; font-size: large; font-weight: normal;"><span class="Apple-style-span" style="color: #333333; font-family: inherit; font-weight: bold; line-height: 20px;"><b>4.Now for&nbsp;adding&nbsp;the&nbsp;images&nbsp;into this plugin see the following markup:</b></span></span><br /><span class="Apple-style-span" style="color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 15px; line-height: 20px;"><span class="Apple-style-span" style="color: #333333; font-family: inherit; font-size: 15px; font-weight: normal; line-height: 20px;"><br /><span class="Apple-style-span" style="font-weight: 800;"></span></span><br /><span class="Apple-style-span" style="font-weight: 800;"><br /></span></span></span></span></span></span><br /><br /><pre class="brush: xml">&lt;div id=&quot;makeMeScrollable&quot;&gt;
+<br />		&lt;div class=&quot;scrollingHotSpotLeft&quot;&gt;
+<br />&lt;/div&gt;
+<br />&lt;div class=&quot;scrollingHotSpotRight&quot;&gt;
+<br />&lt;/div&gt;
+<br />&lt;div class=&quot;scrollWrapper&quot;&gt;
+<br />&lt;div class=&quot;scrollableArea&quot;&gt;
+<br />&lt;img src=&quot;field.jpg&quot; /&gt;&lt;img src=&quot;gnome.jpg&quot;  /&gt;&lt;img src=&quot;pencils.jpg&quot;  /&gt;&lt;img src=&quot;golf.jpg&quot; /&gt;&lt;img src=&quot;river.jpg&quot;  /&gt;&lt;img src=&quot;train.jpg&quot;  /&gt;&lt;img src=&quot;leaf.jpg&quot; /&gt;&lt;img src=&quot;dog.jpg&quot;\ /&gt; 
+<br />&lt;/div&gt;
+<br />&lt;/div&gt;
+<br />&lt;/div&gt;
+<br /></pre><br />Here you might observe that we have placed all the <b>img</b> tags with no spaces in between them, this is because if the <b>img</b> tag is placed in the next line then Blogger Editor by default adds a <b>br</b> tag in between the line which in-turn disturbs the indenting of the images and they appear out of place, do therefore leave no space between them.<br /><b><br /></b><br /><b><br /></b><br /><b><span class="Apple-style-span" style="font-size: large;">5.Now save the Post/Page.<br /><br /></b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button pink serif skew glossy" data-icon="☯" href="http://www.demo.stylifyyourblog.com/2011/08/smooth-div-scroll.html" target="_blank">See Demo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="button green serif skew glossy" data-icon="⇓" href="http://www.mediafire.com/file/t3vwjowlvcxbzb0/SmoothDivScroll-1.1.zip" target="_blank">Download</a><br /><br /><br /><br />
