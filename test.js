@@ -172,8 +172,12 @@
         var nameBody = document.getElementsByTagName('head')[0];
         var newInclude = document.createElement('script');
         newInclude.type = 'text/javascript';
-        newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost");
-        nameBody.appendChild(newInclude)
+        if(urlactivepage.indexOf("?q=") == -1){
+        	newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost");
+        } else {
+        	newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&q="+ urlactivepage.split("?")[1].split("q=")[1] +"&callback=finddatepost");	
+        }
+        nameBody.appendChild(newInclude);
     }
 
     function redirectlabel(numberpage) {
