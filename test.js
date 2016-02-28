@@ -175,7 +175,7 @@
         if(urlactivepage.indexOf("?q=") == -1){
         	newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost");
         } else {
-        	newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&q="+ urlactivepage.split("?")[1].split("q=")[1] +"&callback=finddatepost");	
+        	newInclude.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&q="+ urlactivepage.split("?")[1].split("q=")[1].split("&")[0] +"&callback=finddatepost");	
         }
         nameBody.appendChild(newInclude);
     }
