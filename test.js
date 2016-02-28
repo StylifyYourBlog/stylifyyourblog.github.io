@@ -130,6 +130,7 @@
     function totalcountdata(root) {
         var feed = root.feed;
         var totaldata = parseInt(feed.openSearch$totalResults.$t, 10);
+        console.log(totaldata);
         looppagecurrentg(totaldata)
     }
 
