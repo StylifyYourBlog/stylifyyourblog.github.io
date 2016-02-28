@@ -200,8 +200,12 @@
         var timestamp1 = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29);
         var timestamp = encodeURIComponent(timestamp1);
         if (currentPage == "page") {
-            var pAddress = "/search?updated-max=" + timestamp + "&max-results=" + perPage + "#PageNo=" + noPage
-        } else {
+        	if(urlactivepage.indexOf("?q=") == -1){
+            		var pAddress = "/search?updated-max=" + timestamp + "&max-results=" + perPage + "#PageNo=" + noPage
+        	} else {
+            		var pAddress = "/search?updated-max=" + timestamp + "&q="+ urlactivepage.split("?")[1].split("q=")[1].split("&")[0] +"&max-results=" + perPage + "#PageNo=" + noPage
+        		}
+        	} else {
             var pAddress = "/search/label/" + postLabel + "?updated-max=" + timestamp + "&max-results=" + perPage + "#PageNo=" + noPage
         }
         location.href = pAddress
