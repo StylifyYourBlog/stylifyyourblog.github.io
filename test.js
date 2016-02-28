@@ -150,8 +150,12 @@
                 } else {
                     currentPageNo = 1
                 }
-                document.write("<script src=\"" + home_page + "feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata\"><\/script>")
-            } else {
+                if(thisUrl.indexOf("q=") == -1){
+                	document.write("<script src=\"" + home_page + "feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata\"><\/script>")
+                } else {
+                	document.write("<script src=\"" + home_page + "feeds/posts/summary?max-results=1&q=" + thisUrl.split("?")[1].split("q=")[1].split("&")[0] + "&alt=json-in-script&callback=totalcountdata\"><\/script>")
+                }
+           } else {
                 currentPage = "label";
                 if (thisUrl.indexOf("&max-results=") == -1) {
                     perPage = 20
