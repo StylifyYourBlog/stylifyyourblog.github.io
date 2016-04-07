@@ -4,7 +4,7 @@
     <Require feature="google.blog"/>
   </ModulePrefs>
   <UserPref name="blogId" display_name="Blog Id" required="true" />
-  <Content type="html">
+  <Content type="html"><![CDATA[
     <script type="text/javascript">
      var blog;
 
@@ -19,6 +19,7 @@
          list.innerHTML = "No comments on this blog!";
        }
 
+       
 
          var a = document.createElement("A");
          a.style.color = linkColor;
@@ -32,11 +33,6 @@
 
      gadgets.util.registerOnLoadHandler(initData);
 
-   </script>
-  <![CDATA[
-    <a href="http://www.indeni.com/cp-blog-__UP_up_blogId__">
-      <img src="http://www.indeni.com/s/Blog-Banner-__UP_up_blogId__.jpg" width="320" height="250" border="0"/>
-    </a>
-  ]]>
-  </Content>
+   </script>    
+  ]]></Content>
 </Module>
