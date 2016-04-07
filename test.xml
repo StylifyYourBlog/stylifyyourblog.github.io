@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
-  <ModulePrefs height="250" title="Preferences for __UP_blogId__" scaling="false" />
+  <ModulePrefs height="250" scaling="false" />
   <UserPref name="blogId" display_name="Blog Id" required="true" />
   <Content type="html">
   <![CDATA[
