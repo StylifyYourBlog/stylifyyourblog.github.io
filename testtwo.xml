@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs height="250" scaling="false" >
+    <Require feature="google.blog"/>
+  </ModulePrefs>
+  <UserPref name="blogId" display_name="Blog Id" required="true" />
+  <Content type="html">
+    <script type="text/javascript">
+     var blog;
+
+       blog = new google.Blog(function() {
+         blog.getPostsJson(onLoadFeed);
+       }, window.name);
+
+     function onLoadFeed(data) {
+       data = data.data;
+
+       if (!data.feed.entry || data.feed.entry.length == 0) {
+         list.innerHTML = "No comments on this blog!";
+       }
+
+
+         var a = document.createElement("A");
+         a.style.color = linkColor;
+         a.setAttribute("href", href);
+         a.appendChild(document.createTextNode(entry.author[0].name.$t + " wrote..."));
+         dt.appendChild(a);
+         dd.appendChild(document.createTextNode(entry.content.$t));
+         list.appendChild(dt);
+         list.appendChild(dd);
+       }
+
+     gadgets.util.registerOnLoadHandler(initData);
+
+   </script>
+  <![CDATA[
+    <a href="http://www.indeni.com/cp-blog-__UP_up_blogId__">
+      <img src="http://www.indeni.com/s/Blog-Banner-__UP_up_blogId__.jpg" width="320" height="250" border="0"/>
+    </a>
+  ]]>
+  </Content>
+</Module>
