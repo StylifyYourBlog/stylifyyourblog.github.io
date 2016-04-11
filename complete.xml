@@ -3,7 +3,6 @@
   <ModulePrefs height="250" scaling="false" >
     <Require feature="google.blog"/>
   </ModulePrefs>
-  <UserPref name="blogId" display_name="Blog Id" required="true" />
   <Content type="html"><![CDATA[
     <div class='IndeniGadget'></div>
     <script type="text/javascript">
