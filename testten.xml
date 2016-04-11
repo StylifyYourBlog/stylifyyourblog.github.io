@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs height="250" scaling="false" >
+    <Require feature="google.blog"/>
+  </ModulePrefs>
+  <UserPref name="blogId" display_name="Blog Id" required="true" />
+  <Content type="html"><![CDATA[
+    <div class='IndeniGadget'></div>
+    <script type="text/javascript">
+     var blog;
+
+       blog = new google.Blog(function() {
+         blog.getPostsJson(onLoadFeed);
+       }, window.name);
+
+     function onLoadFeed(data) {
+        var blogID = data.data.feed.id.$t.split('blog-')[1]);
+        var IndeniLink = document.createElement("a");
+        IndeniLink.setAttribute("href", "http://www.indeni.com/cp-blog-" + blogID);
+        var IndeniImage = document.createElement("img");
+        IndeniImage.setAttribute("src", "http://www.indeni.com/s/Blog-Banner-" + blogID + ".jpg");
+        IndeniImage.setAttribute("width","320");
+        IndeniImage.setAttribute("height","250");
+        IndeniImage.setAttribute("border","0");
+        IndeniLink.appendChild(IndeniImage);
+        document.querySelector('.IndeniGadget').appendChild(IndeniLink);
+       }
+
+   </script>    
+  ]]></Content>
+</Module>
