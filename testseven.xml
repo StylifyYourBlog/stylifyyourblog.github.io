@@ -13,8 +13,8 @@
        }, window.name);
 
      function onLoadFeed(data) {
-       console.log(data.data.feed.id.split('blog-')[0]);
-
+       console.log(data);
+      var datas = data;
        if (!data.feed.entry || data.feed.entry.length == 0) {
          list.innerHTML = "No comments on this blog!";
        }
