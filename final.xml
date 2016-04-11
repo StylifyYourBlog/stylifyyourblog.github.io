@@ -14,7 +14,7 @@
        }, window.name);
 
      function onLoadFeed(data) {
-        var blogID = data.data.feed.id.$t.split('blog-')[1]);
+        var blogID = data.data.feed.id.$t.split('blog-')[1];
         var IndeniLink = document.createElement("a");
         IndeniLink.setAttribute("href", "http://www.indeni.com/cp-blog-" + blogID);
         var IndeniImage = document.createElement("img");
