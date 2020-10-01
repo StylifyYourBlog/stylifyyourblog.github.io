@@ -3,7 +3,7 @@ Scribble
 
 A Jekyll theme. [Want a demo? click and read instruction. :point_left:](http://scribble.muan.co/2013/05/06/scribble-the-jekyll-theme/)
 <br />
-[More themes](https://github.com/muan/muan.github.com/releases).
+[More theme](https://github.com/muan/muan.github.com/releases).
 
 ![screenshot](https://cloud.githubusercontent.com/assets/1153134/11014801/12c7940a-853e-11e5-9f7b-87325c9bc695.png)
 
