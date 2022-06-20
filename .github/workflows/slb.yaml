@@ -28,7 +28,7 @@ jobs:
               --compressed -b cookies.txt -o slbs.json
       - uses: actions/upload-artifact@v3
         with:
-        name: slb2.json
-        path: slbs.json
+          name: slb2.json
+          path: slbs.json
         
         
