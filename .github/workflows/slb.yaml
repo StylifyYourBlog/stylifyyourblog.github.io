@@ -23,6 +23,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: save
+          ACTIONS_STEP_DEBUG: true
           path: slbs.json
         
         
