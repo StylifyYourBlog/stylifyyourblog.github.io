@@ -1,0 +1,41 @@
+name: Flat
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: '*/1200 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GET all workspace
+        run: |
+             curl 'https://www.nseindia.com/market-data/securities-lending-and-borrowing' \
+            -H 'authority: www.nseindia.com' \
+            -H 'accept: */*' \
+            -H 'accept-language: en' \
+            -H 'dnt: 1' \
+            -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' \
+            -H 'x-requested-with: XMLHttpRequest' \
+            --cookie-jar cookies.txt --compressed
+      - name: read cookies
+        id: cookies
+        run: |
+              curl 'https://www.nseindia.com/api/live-analysis-slb?series=L1' \
+              -H 'authority: www.nseindia.com' \
+              -H 'accept: */*' \
+              -H 'accept-language: en' \
+              -H 'dnt: 1' \
+              -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' \
+              -H 'x-requested-with: XMLHttpRequest' \
+              --compressed -b cookies.txt -o slbs.json
+      - uses: actions/upload-artifact@v3
+        with:
+        name: slb2.json
+        path: slbs.json
+        
+        
