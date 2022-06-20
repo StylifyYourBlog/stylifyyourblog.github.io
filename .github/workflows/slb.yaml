@@ -12,21 +12,15 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
-      - name: GET all workspace
+      - name: Open page and save cookies
         run: |
              curl 'https://www.nseindia.com/market-data/securities-lending-and-borrowing' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --cookie-jar cookies.txt --compressed
-      - name: read cookies
+      - name: read cookies and fetch file
         id: cookies
         run: |
-              curl 'https://www.nseindia.com/api/live-analysis-slb?series=L1' \
-              -H 'authority: www.nseindia.com' \
-              -H 'accept: */*' \
-              -H 'accept-language: en' \
-              -H 'dnt: 1' \
-              -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' \
-              -H 'x-requested-with: XMLHttpRequest' \
-              --compressed -b cookies.txt -o slbs.json
-      - uses: actions/upload-artifact@v3
+              curl 'https://www.nseindia.com/api/live-analysis-slb?series=L1' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --compressed -b cookies.txt -o slbs.json
+      - name: save file
+        uses: actions/upload-artifact@v3
         with:
           name: slb2.json
           path: slbs.json
