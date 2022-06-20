@@ -6,14 +6,14 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: '*/1200 * * * *'
+    - cron: '*/600 * * * *'
 
 jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Open page and save cookies
         run: |
              curl 'https://www.nseindia.com/market-data/securities-lending-and-borrowing' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --cookie-jar cookies.txt --compressed
