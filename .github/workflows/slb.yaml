@@ -23,7 +23,7 @@ jobs:
       - name: read cookies and fetch file
         id: cookies
         run: |
-              curl 'https://www.nseindia.com/api/live-analysis-slb?series=G1' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --compressed -b cookies.txt > slbs.json
+              curl 'https://www.nseindia.com/api/live-analysis-slb?series=S1' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --compressed -b cookies.txt > slbs.json
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
