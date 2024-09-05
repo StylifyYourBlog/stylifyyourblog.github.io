@@ -19,11 +19,11 @@ jobs:
           fetch-depth: 0
       - name: Open page and save cookies
         run: |
-             curl 'https://www.nseindia.com/market-data/securities-lending-and-borrowing' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --cookie-jar cookies.txt --compressed
+             curl 'https://www.nseindia.com/products-services/equity-derivatives-individual-securities' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --cookie-jar cookies.txt --compressed
       - name: read cookies and fetch file
         id: cookies
         run: |
-              curl 'https://www.nseindia.com/api/live-analysis-slb?series=O1' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --compressed -b cookies.txt > slbs.json
+              curl 'https://nsearchives.nseindia.com/content/fo/NSE_FO_SosScheme.csv' --header 'authority: www.nseindia.com' --header 'accept: */*' --header 'accept-language: en' --header 'dnt: 1' --header 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36' --header 'x-requested-with: XMLHttpRequest' --compressed -b cookies.txt > fno.csv
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
