@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon India Retail Features</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        h1 {
+            color: #232f3e;
+            font-size: 24px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #ff9900;
+            padding-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #232f3e 0%, #37475a 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        th:last-child {
+            border-right: none;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .feature-name {
+            font-weight: 600;
+            color: #232f3e;
+        }
+        
+        .launch-date {
+            color: #ff9900;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .source-link {
+            color: #0066c0;
+            text-decoration: none;
+            font-size: 12px;
+            word-break: break-all;
+        }
+        
+        .source-link:hover {
+            text-decoration: underline;
+            color: #ff9900;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+        
+        .badge-ai {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .badge-delivery {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .badge-payment {
+            background-color: #e8f5e9;
+            color: #388e3c;
+        }
+        
+        .badge-shopping {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .badge-health {
+            background-color: #fce4ec;
+            color: #c2185b;
+        }
+        .badge-product {
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .stats-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ff9900;
+        }
+        
+        .stat-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #232f3e;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            .table-container {
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon India Customer-Facing Retail Features</h1>
+    <div class="subtitle">Comprehensive list of features launched between June 2024 - August 2025</div>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 20%">Feature Name</th>
+                    <th style="width: 15%">Launch Date</th>
+                    <th style="width: 35%">Description</th>
+                    <th style="width: 15%">Coverage/Platform</th>
+                    <th style="width: 15%">Official Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="feature-name">Amazon Diagnostics</div>
+                        <span class="badge badge-health">Healthcare</span>
+                        <span class="badge badge-product">New Product</span>
+                    </td>
+                    <td class="launch-date">June 2024</td>
+                    <td>At-home diagnostic lab testing with 60-minute sample collection, results in 6 hours</td>
+                    <td>6 cities: Bengaluru, Delhi, Gurgaon, Noida, Mumbai, Hyderabad</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/amazon-at-home-diagnostics-service-launch" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">Smartphone Genie</div>
+                        <span class="badge badge-ai">AI</span>
+                                                <span class="badge badge-product">New Product</span>
+
+                    </td>
+                    <td class="launch-date">July 2024</td>
+                    <td>Interactive widget powered by Digit for expert smartphone recommendations based on budget and usage</td>
+                    <td>Website & App</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/how-to-shop-like-a-pro-during-prime-day-2024" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">Rufus AI Assistant</div>
+                        <span class="badge badge-ai">AI</span>
+                                                <span class="badge badge-product">New Product</span>
+
+                    </td>
+                    <td class="launch-date">Aug 2024 (Beta)<br>Oct 2024 (Wide)</td>
+                    <td>Generative AI conversational shopping assistant for product recommendations, comparisons, and natural language search</td>
+                    <td>Mobile app</td>
+                    <td><a href="https://www.themobileindian.com/news/amazon-rufus-ai-shopping-assistant-arrives-in-india-things-to-know" class="source-link" target="_blank">Industry reports</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">Amazon Bazaar</div>
+                        <span class="badge badge-shopping">Shopping</span>
+                                                <span class="badge badge-product">New Product</span>
+
+                    </td>
+                    <td class="launch-date">Sept 27, 2024</td>
+                    <td>Ultra-affordable fashion and home products storefront with items starting from ₹8</td>
+                    <td>Android app exclusive</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/amazon-bazaar-value-shopping" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">Vernacular Languages</div>
+                        <span class="badge badge-shopping">Shopping</span>
+                                                <span class="badge badge-health">Incremental</span>
+
+                    </td>
+                    <td class="launch-date">Sept 2024</td>
+                    <td>Complete shopping experience in 8 Indian languages: Hindi, Tamil, Telugu, Malayalam, Kannada, Bengali, Marathi, English</td>
+                    <td>Website & App</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/top-amazon-great-indian-festival-2024-deals" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">NCERT Bookstore</div>
+                        <span class="badge badge-shopping">Shopping</span>
+                                                                        <span class="badge badge-health">Incremental</span>
+
+                    </td>
+                    <td class="launch-date">Oct 7, 2024</td>
+                    <td>Exclusive online store for authentic NCERT textbooks at MRP with nationwide delivery</td>
+                    <td>Pan India</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/amazon-partners-with-ncert-to-launch-k-12-books-store" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">AI Review Summaries</div>
+                        <span class="badge badge-ai">AI</span>
+                                                                        <span class="badge badge-product">New Product</span>
+
+                    </td>
+                    <td class="launch-date">2024</td>
+                    <td>AI-powered brief paragraph summaries of customer reviews on product detail pages</td>
+                    <td>Website & App</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/how-to-shop-like-a-pro-during-prime-day-2024" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">Amazon Now (10-min delivery)</div>
+                        <span class="badge badge-delivery">Delivery</span>
+                                                                                                <span class="badge badge-product">New Product</span>
+
+                    </td>
+                    <td class="launch-date">Dec 2024 (Pilot)<br>Feb 2025 (BLR)<br>July 2025 (DEL)</td>
+                    <td>Ultra-fast 10-minute delivery for groceries and essentials. Codenamed "Tez". Investment: ₹2,000+ crore</td>
+                    <td>Bengaluru, Delhi-NCR<br>Target: 300 dark stores by 2025</td>
+                    <td><a href="https://www.business-standard.com/companies/news/amazon-10-minute-delivery-delhi-quick-commerce-expansion-india-125071000512_1.html" class="source-link" target="_blank">Business Standard</a></td>
+                </tr>
+                
+           
+                <tr>
+                    <td>
+                        <div class="feature-name">Enhanced Same-Day Delivery</div>
+                        <span class="badge badge-delivery">Delivery</span>
+                                                                                                <span class="badge badge-health">Incremental</span>
+
+                    </td>
+                    <td class="launch-date">2024-2025</td>
+                    <td>Same-day delivery expanded to 10 lakh+ items, 11% more PIN codes covered</td>
+                    <td>Pan India expansion</td>
+                    <td><a href="https://www.aboutamazon.in/news/amazon-prime/amazon-fastest-delivery-speeds-for-prime-members-2024" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">Amazon Fresh 2-Hour Blocks</div>
+                        <span class="badge badge-delivery">Delivery</span>
+                                                                                                <span class="badge badge-health">Incremental</span>
+
+                    </td>
+                    <td class="launch-date">2024-2025</td>
+                    <td>Expanded 2-hour delivery blocks for groceries and essentials. 20 crore units delivered same/next day (23% YoY increase)</td>
+                    <td>Major cities</td>
+                    <td><a href="https://www.aboutamazon.in/news/amazon-prime/amazon-fastest-delivery-speeds-for-prime-members-2024" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">30+ New Delivery Stations</div>
+                        <span class="badge badge-delivery">Delivery</span>
+                                                                                                <span class="badge badge-health">Incremental</span>
+
+                    </td>
+                    <td class="launch-date">2025</td>
+                    <td>New delivery stations in Tier II/III cities including Nagpur, Panchkula, Howrah, Indore</td>
+                    <td>Tier II/III cities</td>
+                    <td><a href="https://www.aboutamazon.in/news/operations/inside-one-of-amazons-biggest-fulfilment-centres-in-india" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">5 New Fulfillment Centers</div>
+                        <span class="badge badge-delivery">Delivery</span>
+                                                                                                <span class="badge badge-health">Incremental</span>
+
+                    </td>
+                    <td class="launch-date">2025</td>
+                    <td>New fulfillment centers added ahead of Prime Day 2025 to support faster delivery</td>
+                    <td>Strategic locations</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/prime-day-2025-deals-revealed" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+              
+                
+                
+                <tr>
+                    <td>
+                        <div class="feature-name">Amazon Pay Rewards Gold</div>
+                        <span class="badge badge-payment">Payment</span>
+                        <span class="badge badge-health">Incremental</span>
+                    </td>
+                    <td class="launch-date">July 2025</td>
+                    <td>Up to 5% cashback for Prime members (3% non-Prime) after 25 transactions. Redeemable across 55,000+ merchants</td>
+                    <td>Pan India</td>
+                    <td><a href="https://www.aboutamazon.in/news/retail/amazon-pay-rewards-gold-cashback-program" class="source-link" target="_blank">aboutamazon.in</a></td>
+                </tr>
+                
+                
+                
+            </tbody>
+        </table>
+    </div>
+    
+   
+</body>
+</html>
