@@ -1,4 +1,4 @@
-14082026
+17082026
 Symbol,Month type,Symbol Type,Step Value,No. of Strikes Provided (ITM),No. of Strikes Provided (ATM),No. of Strikes Provided (OTM),Total Strikes including reserve (ITM),Total Strikes including reserve (ATM),Total Strikes including reserve (OTM)
 360ONE,M1,EQUITY,20,6,1,6,18,1,18
 360ONE,M1,EQUITY,40,4,1,4,12,1,12
@@ -872,8 +872,8 @@ ONGC,M2,EQUITY,2.5,10,1,10,30,1,30
 ONGC,M2,EQUITY,5,7,1,7,21,1,21
 ONGC,M3,EQUITY,5,5,1,5,15,1,15
 ONGC,M3,EQUITY,10,4,1,4,12,1,12
-PAGEIND,M1,EQUITY,1000,6,1,6,18,1,18
 PAGEIND,M1,EQUITY,500,8,1,8,24,1,24
+PAGEIND,M1,EQUITY,1000,6,1,6,18,1,18
 PAGEIND,M2,EQUITY,500,8,1,8,24,1,24
 PAGEIND,M2,EQUITY,1000,6,1,6,18,1,18
 PAGEIND,M3,EQUITY,1000,4,1,4,12,1,12
